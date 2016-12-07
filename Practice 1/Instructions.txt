@@ -1,0 +1,36 @@
+1. Create a new component that will serve as a single list view row. (All .ts files should have a sub-extension to identify the functionality of the file.  For components the file type should be <filename>.component.ts)
+2. Create the HTML for the list view row.  This can look however you want it to look, as long as it includes the follow:
+    a) Document Name
+    b) Standard attributes
+    c) Custom attributes
+    d) Some means of row selection 
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+3. Create a public variable to represent the document name, and set the value of the public variable inside the components constructor.
+4. Display the value of the public variable created in the previous step in the HTML template.
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+5. Add a public function for renaming a document.  
+    a) This function should accept one parameter of type "string".
+6. Inside the function, prompt the user to enter a new name for the document (I recommend using the native "prompt" function). Assign that new value to your public variable.
+7. On the element that displays your document name (in the HTML template), add a click handler that calls your public function, and passes the document name variable as it's parameter.
+    a) Test what you've done so far. (So far, you should be able to click on the document name, rename the document, and see those change on the HTML)
+    b) For fun, add the document name in a second place on the page. (Notice, renaming the document should change the document name in both locations)
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+8. Create a private function for validating the new document name.
+    a) This function should accept the new name as it's parameter.
+    b) This function should return type "boolean".
+9. Inside the function, do some sort of data validation on the new name (doesn't matter what that validation is). If the validation fails, return false (or throw an error).  If the validation succeeds then return true.
+10. Change the public rename function to call the private validation function.  If validation fails, do not allow rename to proceed.
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+11. Move the HTML to a template file (.html) and point the component to that file.
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+12. Create a new service file (<filename.service.ts) for data validation.
+13. Create a new class inside the service file and copy your private validation function from the component to service.  Change the function to private (you may want to rename the function as well)
+14. Import the validation service into the component. (import {<Class Name>} from "./<filename w/ .ts>")
+    a) Notice that the import statement is throwing an error.  This is because the service must first be exported.
+15. Add the "export" label in front of the services' class declaration.  
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+16. Add the service class to the component by using dependency injection. Inside the components constructor add the parameter: <public/private> <parameter name> : <service class name>
+17. Let the framework know this is DI by adding "providers : [<service class name>]" to the component definition (@Component({...})).
+18. In the service file, import the "Injectable" component from the Angular2 framework (import {Injectable} from "@angular/core";) and add the @Injectable() decorator to the service class.
+19. In your component, remove the private validation function.  Replace its caller with a call to the validation function that was moved to the validation service.
+20. Test your app.  You should be able to click to rename a document and validate the input from the user!

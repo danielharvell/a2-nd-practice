@@ -1,0 +1,690 @@
+[
+    {
+        "customAttributes": [],
+        "location": {
+            "account": "CA-3ZQD3FL0",
+            "cabinet": "NG-K0NJ8NTR"
+        },
+        "misc": {
+            "approved": false,
+            "archived": false,
+            "deleted": false,
+            "echo": true,
+            "external": false,
+            "favorite": false,
+            "signed": false
+        },
+        "permissions": [
+            {
+                "administer": true,
+                "cabDefault": false,
+                "edit": true,
+                "noAccess": false,
+                "share": true,
+                "view": true
+            }
+        ],
+        "standardAttributes": {
+            "aclStatus": "thawed",
+            "checkedOutState": false,
+            "created": "\/Date(1480719084784)\/",
+            "createdBy": "Link to User Admin",
+            "createdByGuid": "DUCOT-FQ2K5B1H",
+            "envId": ":Ducot3:r:g:v:x:^F161202175124784.nev",
+            "extension": "ndfld",
+            "hoverTip": "Folder ACL - no profile",
+            "id": "4827-5919-6705",
+            "modified": "\/Date(1480719085738)\/",
+            "modifiedBy": "Link to User Admin",
+            "modifiedByGuid": "DUCOT-FQ2K5B1H",
+            "name": "was folderACL inerited",
+            "officialVer": 1,
+            "size": 1,
+            "syncMod": 20161202155125479,
+            "url": "https:\/\/ducot.netdocuments.com\/Ducot3\/r\/g\/v\/x\/^F161202175124784.nev",
+            "versions": 1
+        }
+    },
+    {
+        "customAttributes": [],
+        "location": {
+            "account": "CA-3ZQD3FL0",
+            "cabinet": "NG-K0NJ8NTR"
+        },
+        "misc": {
+            "approved": false,
+            "archived": false,
+            "deleted": false,
+            "echo": true,
+            "external": false,
+            "favorite": false,
+            "signed": false
+        },
+        "permissions": [
+            {
+                "administer": true,
+                "cabDefault": false,
+                "edit": true,
+                "noAccess": false,
+                "share": true,
+                "view": true
+            }
+        ],
+        "standardAttributes": {
+            "aclStatus": "thawed",
+            "checkedOutState": false,
+            "created": "\/Date(1480719029306)\/",
+            "createdBy": "Link to User Admin",
+            "createdByGuid": "DUCOT-FQ2K5B1H",
+            "envId": ":Ducot4:k:a:o:f:~161202175029306.nev",
+            "extension": "pptx",
+            "id": "4827-4241-9489",
+            "modified": "\/Date(1480633039719)\/",
+            "modifiedBy": "Link to User Admin",
+            "modifiedByGuid": "DUCOT-FQ2K5B1H",
+            "name": "Checking if folder acl appears in ACL",
+            "officialVer": 1,
+            "size": 47,
+            "syncMod": 0,
+            "url": "https:\/\/ducot.netdocuments.com\/Ducot4\/k\/a\/o\/f\/~161202175029306.nev",
+            "versions": 1
+        }
+    },
+    {
+        "customAttributes": [],
+        "location": {
+            "account": "CA-3ZQD3FL0",
+            "cabinet": "NG-K0NJ8NTR"
+        },
+        "misc": {
+            "approved": false,
+            "archived": false,
+            "deleted": false,
+            "echo": true,
+            "external": false,
+            "favorite": false,
+            "signed": false
+        },
+        "permissions": [
+            {
+                "administer": true,
+                "cabDefault": false,
+                "edit": true,
+                "noAccess": false,
+                "share": true,
+                "view": true
+            }
+        ],
+        "standardAttributes": {
+            "aclStatus": "thawed",
+            "checkedOutState": false,
+            "created": "\/Date(1480717365991)\/",
+            "createdBy": "Link to User Admin",
+            "createdByGuid": "DUCOT-FQ2K5B1H",
+            "envId": ":Ducot3:j:u:q:u:~161202172245991.nev",
+            "extension": "pptx",
+            "id": "4849-9050-0897",
+            "modified": "\/Date(1480633039719)\/",
+            "modifiedBy": "Link to User Admin",
+            "modifiedByGuid": "DUCOT-FQ2K5B1H",
+            "name": "Doc - Admin user",
+            "officialVer": 1,
+            "size": 47,
+            "syncMod": 0,
+            "url": "https:\/\/ducot.netdocuments.com\/Ducot3\/j\/u\/q\/u\/~161202172245991.nev",
+            "versions": 1
+        }
+    },
+    {
+        "customAttributes": [],
+        "location": {
+            "account": "CA-3ZQD3FL0",
+            "cabinet": "NG-K0NJ8NTR"
+        },
+        "misc": {
+            "approved": false,
+            "archived": false,
+            "deleted": false,
+            "echo": true,
+            "external": false,
+            "favorite": false,
+            "signed": false
+        },
+        "permissions": [
+            {
+                "administer": true,
+                "cabDefault": false,
+                "edit": true,
+                "noAccess": false,
+                "share": true,
+                "view": true
+            }
+        ],
+        "standardAttributes": {
+            "aclStatus": "thawed",
+            "checkedOutState": false,
+            "created": "\/Date(1480963621163)\/",
+            "createdBy": "Link to User Admin",
+            "createdByGuid": "DUCOT-FQ2K5B1H",
+            "envId": ":Ducot4:s:y:g:7:~161205134701163.nev",
+            "extension": "pptx",
+            "id": "4832-6729-7313",
+            "modified": "\/Date(1480633039719)\/",
+            "modifiedBy": "Link to User Admin",
+            "modifiedByGuid": "DUCOT-FQ2K5B1H",
+            "name": "Doc - Admin user",
+            "officialVer": 1,
+            "size": 47,
+            "syncMod": 0,
+            "url": "https:\/\/ducot.netdocuments.com\/Ducot4\/s\/y\/g\/7\/~161205134701163.nev",
+            "versions": 1
+        }
+    },
+    {
+        "customAttributes": [],
+        "location": {
+            "account": "CA-3ZQD3FL0",
+            "cabinet": "NG-K0NJ8NTR"
+        },
+        "misc": {
+            "approved": false,
+            "archived": false,
+            "deleted": false,
+            "echo": true,
+            "external": false,
+            "favorite": false,
+            "signed": false
+        },
+        "permissions": [
+            {
+                "administer": true,
+                "cabDefault": false,
+                "edit": true,
+                "noAccess": false,
+                "share": true,
+                "view": true
+            }
+        ],
+        "standardAttributes": {
+            "aclStatus": "thawed",
+            "checkedOutState": false,
+            "created": "\/Date(1480717612371)\/",
+            "createdBy": "Link to User Admin",
+            "createdByGuid": "DUCOT-FQ2K5B1H",
+            "envId": ":Ducot7:z:v:e:m:~161202172652355.nev",
+            "extension": "pptx",
+            "id": "4853-0926-8001",
+            "modified": "\/Date(1480633039719)\/",
+            "modifiedBy": "Link to User Admin",
+            "modifiedByGuid": "DUCOT-FQ2K5B1H",
+            "name": "Doc - Admin user",
+            "officialVer": 1,
+            "size": 47,
+            "syncMod": 0,
+            "url": "https:\/\/ducot.netdocuments.com\/Ducot7\/z\/v\/e\/m\/~161202172652355.nev",
+            "versions": 1
+        }
+    },
+    {
+        "customAttributes": [],
+        "location": {
+            "account": "CA-3ZQD3FL0",
+            "cabinet": "NG-K0NJ8NTR"
+        },
+        "misc": {
+            "approved": false,
+            "archived": false,
+            "deleted": false,
+            "echo": true,
+            "external": false,
+            "favorite": false,
+            "signed": false
+        },
+        "permissions": [
+            {
+                "administer": true,
+                "cabDefault": false,
+                "edit": true,
+                "noAccess": false,
+                "share": true,
+                "view": true
+            }
+        ],
+        "standardAttributes": {
+            "aclStatus": "thawed",
+            "checkedOutState": false,
+            "created": "\/Date(1480718744928)\/",
+            "createdBy": "Link to User Admin",
+            "createdByGuid": "DUCOT-FQ2K5B1H",
+            "envId": ":Ducot3:r:o:m:k:~161202174544928.nev",
+            "extension": "pptx",
+            "id": "4827-2564-2273",
+            "modified": "\/Date(1480633039719)\/",
+            "modifiedBy": "Link to User Admin",
+            "modifiedByGuid": "DUCOT-FQ2K5B1H",
+            "name": "Doc - Admin user (copy)3",
+            "officialVer": 1,
+            "size": 47,
+            "syncMod": 0,
+            "url": "https:\/\/ducot.netdocuments.com\/Ducot3\/r\/o\/m\/k\/~161202174544928.nev",
+            "versions": 1
+        }
+    },
+    {
+        "customAttributes": [],
+        "location": {
+            "account": "CA-3ZQD3FL0",
+            "cabinet": "NG-K0NJ8NTR"
+        },
+        "misc": {
+            "approved": false,
+            "archived": false,
+            "deleted": false,
+            "echo": true,
+            "external": true,
+            "favorite": false,
+            "signed": false
+        },
+        "permissions": [
+            {
+                "administer": true,
+                "cabDefault": false,
+                "edit": true,
+                "noAccess": false,
+                "share": true,
+                "view": true
+            }
+        ],
+        "standardAttributes": {
+            "aclStatus": "thawed",
+            "checkedOutState": false,
+            "created": "\/Date(1480963622304)\/",
+            "createdBy": "Link to User Admin",
+            "createdByGuid": "DUCOT-FQ2K5B1H",
+            "envId": ":Ducot3:l:f:m:z:~161205134702304.nev",
+            "extension": "xlsx",
+            "id": "4832-8407-4529",
+            "modified": "\/Date(1480632976926)\/",
+            "modifiedBy": "Link to User Admin",
+            "modifiedByGuid": "DUCOT-FQ2K5B1H",
+            "name": "Doc - external",
+            "officialVer": 1,
+            "size": 9,
+            "syncMod": 0,
+            "url": "https:\/\/ducot.netdocuments.com\/Ducot3\/l\/f\/m\/z\/~161205134702304.nev",
+            "versions": 1
+        }
+    },
+    {
+        "customAttributes": [],
+        "location": {
+            "account": "CA-3ZQD3FL0",
+            "cabinet": "NG-K0NJ8NTR"
+        },
+        "misc": {
+            "approved": false,
+            "archived": false,
+            "deleted": false,
+            "echo": true,
+            "external": true,
+            "favorite": false,
+            "signed": false
+        },
+        "permissions": [
+            {
+                "administer": true,
+                "cabDefault": false,
+                "edit": true,
+                "noAccess": false,
+                "share": true,
+                "view": true
+            }
+        ],
+        "standardAttributes": {
+            "aclStatus": "thawed",
+            "checkedOutState": false,
+            "created": "\/Date(1480719867009)\/",
+            "createdBy": "Link to User Admin",
+            "createdByGuid": "DUCOT-FQ2K5B1H",
+            "envId": ":Ducot4:c:x:k:u:~161202180427009.nev",
+            "extension": "xlsx",
+            "id": "4835-1417-1425",
+            "modified": "\/Date(1480632976926)\/",
+            "modifiedBy": "Link to User Admin",
+            "modifiedByGuid": "DUCOT-FQ2K5B1H",
+            "name": "Doc - external",
+            "officialVer": 1,
+            "size": 9,
+            "syncMod": 0,
+            "url": "https:\/\/ducot.netdocuments.com\/Ducot4\/c\/x\/k\/u\/~161202180427009.nev",
+            "versions": 1
+        }
+    },
+    {
+        "customAttributes": [],
+        "location": {
+            "account": "CA-3ZQD3FL0",
+            "cabinet": "NG-K0NJ8NTR"
+        },
+        "misc": {
+            "approved": false,
+            "archived": false,
+            "deleted": false,
+            "echo": true,
+            "external": true,
+            "favorite": false,
+            "signed": false
+        },
+        "permissions": [
+            {
+                "administer": true,
+                "cabDefault": false,
+                "edit": true,
+                "noAccess": false,
+                "share": true,
+                "view": true
+            }
+        ],
+        "standardAttributes": {
+            "aclStatus": "thawed",
+            "checkedOutState": false,
+            "created": "\/Date(1480717367148)\/",
+            "createdBy": "Link to User Admin",
+            "createdByGuid": "DUCOT-FQ2K5B1H",
+            "envId": ":Ducot5:f:b:t:2:~161202172247148.nev",
+            "extension": "xlsx",
+            "id": "4850-2405-5329",
+            "modified": "\/Date(1480632976926)\/",
+            "modifiedBy": "Link to User Admin",
+            "modifiedByGuid": "DUCOT-FQ2K5B1H",
+            "name": "Doc - external",
+            "officialVer": 1,
+            "size": 9,
+            "syncMod": 0,
+            "url": "https:\/\/ducot.netdocuments.com\/Ducot5\/f\/b\/t\/2\/~161202172247148.nev",
+            "versions": 1
+        }
+    },
+    {
+        "customAttributes": [],
+        "location": {
+            "account": "CA-3ZQD3FL0",
+            "cabinet": "NG-K0NJ8NTR"
+        },
+        "misc": {
+            "approved": false,
+            "archived": false,
+            "deleted": false,
+            "echo": true,
+            "external": true,
+            "favorite": false,
+            "signed": false
+        },
+        "permissions": [
+            {
+                "administer": true,
+                "cabDefault": false,
+                "edit": true,
+                "noAccess": false,
+                "share": true,
+                "view": true
+            }
+        ],
+        "standardAttributes": {
+            "aclStatus": "thawed",
+            "checkedOutState": false,
+            "created": "\/Date(1480719963992)\/",
+            "createdBy": "Link to User Admin",
+            "createdByGuid": "DUCOT-FQ2K5B1H",
+            "envId": ":Ducot7:8:p:6:x:~161202180603992.nev",
+            "extension": "xlsx",
+            "id": "4836-1483-4721",
+            "modified": "\/Date(1480632976926)\/",
+            "modifiedBy": "Link to User Admin",
+            "modifiedByGuid": "DUCOT-FQ2K5B1H",
+            "name": "Doc - external",
+            "officialVer": 1,
+            "size": 9,
+            "syncMod": 0,
+            "url": "https:\/\/ducot.netdocuments.com\/Ducot7\/8\/p\/6\/x\/~161202180603992.nev",
+            "versions": 1
+        }
+    },
+    {
+        "customAttributes": [],
+        "location": {
+            "account": "CA-3ZQD3FL0",
+            "cabinet": "NG-K0NJ8NTR"
+        },
+        "misc": {
+            "approved": false,
+            "archived": false,
+            "deleted": false,
+            "echo": true,
+            "external": true,
+            "favorite": false,
+            "signed": false
+        },
+        "permissions": [
+            {
+                "administer": true,
+                "cabDefault": false,
+                "edit": true,
+                "noAccess": false,
+                "share": true,
+                "view": true
+            }
+        ],
+        "standardAttributes": {
+            "aclStatus": "thawed",
+            "checkedOutState": false,
+            "created": "\/Date(1480718078460)\/",
+            "createdBy": "Link to User Admin",
+            "createdByGuid": "DUCOT-FQ2K5B1H",
+            "envId": ":Ducot4:u:w:9:o:~161202173438460.nev",
+            "extension": "xlsx",
+            "id": "4818-0289-5393",
+            "modified": "\/Date(1480632976926)\/",
+            "modifiedBy": "Link to User Admin",
+            "modifiedByGuid": "DUCOT-FQ2K5B1H",
+            "name": "Doc - external (copy)",
+            "officialVer": 1,
+            "size": 9,
+            "syncMod": 0,
+            "url": "https:\/\/ducot.netdocuments.com\/Ducot4\/u\/w\/9\/o\/~161202173438460.nev",
+            "versions": 1
+        }
+    },
+    {
+        "customAttributes": [],
+        "location": {
+            "account": "CA-3ZQD3FL0",
+            "cabinet": "NG-K0NJ8NTR"
+        },
+        "misc": {
+            "approved": false,
+            "archived": false,
+            "deleted": false,
+            "echo": true,
+            "external": false,
+            "favorite": false,
+            "signed": false
+        },
+        "permissions": [
+            {
+                "administer": true,
+                "cabDefault": false,
+                "edit": true,
+                "noAccess": false,
+                "share": true,
+                "view": true
+            }
+        ],
+        "standardAttributes": {
+            "aclStatus": "thawed",
+            "checkedOutState": false,
+            "created": "\/Date(1480963623241)\/",
+            "createdBy": "Link to User Admin",
+            "createdByGuid": "DUCOT-FQ2K5B1H",
+            "envId": ":Ducot5:r:c:y:5:~161205134703241.nev",
+            "extension": "docx",
+            "id": "4833-0085-1745",
+            "modified": "\/Date(1480633024095)\/",
+            "modifiedBy": "Link to User Admin",
+            "modifiedByGuid": "DUCOT-FQ2K5B1H",
+            "name": "Doc - non member",
+            "officialVer": 1,
+            "size": 13,
+            "syncMod": 0,
+            "url": "https:\/\/ducot.netdocuments.com\/Ducot5\/r\/c\/y\/5\/~161205134703241.nev",
+            "versions": 1
+        }
+    },
+    {
+        "customAttributes": [],
+        "location": {
+            "account": "CA-3ZQD3FL0",
+            "cabinet": "NG-K0NJ8NTR"
+        },
+        "misc": {
+            "approved": false,
+            "archived": false,
+            "deleted": false,
+            "echo": true,
+            "external": false,
+            "favorite": false,
+            "signed": false
+        },
+        "permissions": [
+            {
+                "administer": true,
+                "cabDefault": false,
+                "edit": true,
+                "noAccess": false,
+                "share": true,
+                "view": true
+            }
+        ],
+        "standardAttributes": {
+            "aclStatus": "thawed",
+            "checkedOutState": false,
+            "created": "\/Date(1480717368320)\/",
+            "createdBy": "Link to User Admin",
+            "createdByGuid": "DUCOT-FQ2K5B1H",
+            "envId": ":Ducot7:y:0:z:a:~161202172248320.nev",
+            "extension": "docx",
+            "id": "4850-4083-2545",
+            "modified": "\/Date(1480633024095)\/",
+            "modifiedBy": "Link to User Admin",
+            "modifiedByGuid": "DUCOT-FQ2K5B1H",
+            "name": "Doc - non member",
+            "officialVer": 1,
+            "size": 13,
+            "syncMod": 0,
+            "url": "https:\/\/ducot.netdocuments.com\/Ducot7\/y\/0\/z\/a\/~161202172248320.nev",
+            "versions": 1
+        }
+    },
+    {
+        "customAttributes": [],
+        "email": {
+            "attachments": [
+                {
+                    "name": "DR.CA-JT2SCYLQ.de2aa26481d3.xml"
+                }
+            ],
+            "cc": "",
+            "from": "NetDocuments Document Retention Manager (email@mail.ducot.netdocuments.com)",
+            "id": "",
+            "subject": "Documents Eligible for Deletion",
+            "to": "yaterchatter+dot@gmail.com; tanner.s.edwards@gmail.com; Nathan Johnson (njohnson@netdocuments.com); yaterchatter+nodot@gmail.com; yaterchatter+retention@gmail.com"
+        },
+        "location": {
+            "account": "CA-3ZQD3FL0",
+            "cabinet": "NG-K0NJ8NTR"
+        },
+        "misc": {
+            "approved": false,
+            "archived": false,
+            "deleted": false,
+            "echo": true,
+            "external": false,
+            "favorite": false,
+            "signed": false
+        },
+        "permissions": [
+            {
+                "administer": true,
+                "cabDefault": false,
+                "edit": true,
+                "noAccess": false,
+                "share": true,
+                "view": true
+            }
+        ],
+        "standardAttributes": {
+            "aclStatus": "thawed",
+            "checkedOutState": false,
+            "created": "\/Date(1480717369523)\/",
+            "createdBy": "Link to User Admin",
+            "createdByGuid": "DUCOT-FQ2K5B1H",
+            "envId": ":Ducot3:a:7:z:x:~161202172249523.nev",
+            "extension": "msg",
+            "id": "4850-5760-9761",
+            "modified": "\/Date(1389804066000)\/",
+            "modifiedBy": "NetDocuments Document Retention Manager (email@mail.ducot.netdocuments.com)",
+            "modifiedByGuid": "MAIL-EXTERNAL",
+            "name": "email - internal",
+            "officialVer": 1,
+            "size": 39,
+            "syncMod": 0,
+            "url": "https:\/\/ducot.netdocuments.com\/Ducot3\/a\/7\/z\/x\/~161202172249523.nev",
+            "versions": 1
+        }
+    },
+    {
+        "customAttributes": [],
+        "location": {
+            "account": "CA-3ZQD3FL0",
+            "cabinet": "NG-K0NJ8NTR"
+        },
+        "misc": {
+            "approved": false,
+            "archived": false,
+            "deleted": false,
+            "echo": true,
+            "external": false,
+            "favorite": false,
+            "signed": false
+        },
+        "permissions": [
+            {
+                "administer": true,
+                "cabDefault": false,
+                "edit": true,
+                "noAccess": false,
+                "share": true,
+                "view": true
+            }
+        ],
+        "standardAttributes": {
+            "aclStatus": "thawed",
+            "checkedOutState": false,
+            "created": "\/Date(1481060575393)\/",
+            "createdBy": "Link to User Admin",
+            "createdByGuid": "DUCOT-FQ2K5B1H",
+            "envId": ":Ducot3:0:v:j:7:~161206164255393.nev",
+            "extension": "txt",
+            "id": "4814-2429-4177",
+            "modified": "\/Date(1481060576283)\/",
+            "modifiedBy": "Link to User Admin",
+            "modifiedByGuid": "DUCOT-FQ2K5B1H",
+            "name": "LinkToUser-REST-Upload to non ACL Folder 636166321757239610",
+            "officialVer": 1,
+            "size": 1,
+            "syncMod": 20161206144256248,
+            "url": "https:\/\/ducot.netdocuments.com\/Ducot3\/0\/v\/j\/7\/~161206164255393.nev",
+            "versions": 1
+        }
+    }
+]
