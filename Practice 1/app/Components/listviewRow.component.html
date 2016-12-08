@@ -1,9 +1,5 @@
 
-<!--<tr id="{{i}}" (click)="selected(i)" *ngFor="let document of documents; let i=index">-->
 <tr id="{{index}}" (click)="selected(index)">
-    <!--<td class="name" [innerText]="document.standardAttributes.name"></td>
-    <td class="standard-attrs" [innerText]="document.standardAttributes | json"></td>
-    <td class="custom-attrs" [innerText]="document.customAttributes | json"></td>-->
     <td style="width: 100%">
         <div class="name w" (click)="rename(itemName)" [innerText]="itemName"></div>
         <!--<div class="standard-attrs w" [innerText]="document.standardAttributes.createdBy | json"></div> 
