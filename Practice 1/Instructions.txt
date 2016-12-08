@@ -24,7 +24,7 @@
 11. Move the HTML to a template file (.html) and point the component to that file.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 12. Create a new service file (<filename.service.ts) for data validation.
-13. Create a new class inside the service file and copy your private validation function from the component to service.  Change the function to private (you may want to rename the function as well)
+13. Create a new class inside the service file and copy your private validation function from the component to service.  Change the function to public (you may want to rename the function as well)
 14. Import the validation service into the component. (import {<Class Name>} from "./<filename w/ .ts>")
     a) Notice that the import statement is throwing an error.  This is because the service must first be exported.
 15. Add the "export" label in front of the services' class declaration.  
