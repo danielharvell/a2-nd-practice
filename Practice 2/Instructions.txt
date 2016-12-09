@@ -1,0 +1,45 @@
+1. Import HttpModule (from @angular/http) and declare it as an import in NgModule.
+2. Import Http and RxJS into your main component to facilitate HTTP requests
+    Example:
+    import {Http} from '@angular/http';
+    import 'rxjs/add/operator/toPromise';
+3. Using dependecy injection, add Http to the main components constructor (this can be private). (For more details: https://angular.io/docs/ts/latest/guide/dependency-injection.html)
+4. TypeScript allows you to define the shape of object (this make development less bug prone and facilitates the ts compiler). DocumentInformation.ts is an interface that defines the shape of a NetDocuments list view row.  Import DocumentInformation into your main component. (For more details: https://www.typescriptlang.org/docs/handbook/interfaces.html)
+5. Create a public variable in your component class to represent the single document row.
+6. Create a private function in your component class that will be used to make and http request to fetch a single row from the "server".
+    a. Inside the function add the following to make the request:
+         this.<DI variable name>.get("../singleRow.json").toPromise().then(data => {
+            this.<public single document row variable name> = data.json() as DocumentInformation;
+        });
+    b. The http requests "get" call returns either a promise or an observable. (For more details: http://stackoverflow.com/questions/37364973/angular-2-promise-vs-observable) In this case we are going to use the promise.
+    c. singleRow.json is our fake server request that returns some json data to us.
+    d. The => is the lambda operator.  This works similar in TypeScript as it does in other languages.  Essentially:
+
+            (data => this.x = data.json() as DocumentInformation)
+
+        is the same as:
+
+            (function(data: DocumentInformation){
+                this.x = data.json();
+            })
+
+        (For more details: https://basarat.gitbooks.io/typescript/content/docs/arrow-functions.html)
+7. Add a call to your new private function inside your components constructor (you can add a console.log(this.xxx) to see the value be populated).
+8. Inside your row HTML template, remove all reference to the document name variable added in the previous lesson and replace them with a reference to your new row variable. (this should look something like {{row.standardAttributes.name}})
+9. Replace your other row values with values found in the row object. Run and test your applications.
+----------------------------------------------------------------------------------------------------------------------
+10. NOTE: You'll notice that your application will not render your template.  It should be complaining about standardAttributes not being defined. This is because at the time we attempt to render the HTML the data for the row variable hasn't been populated yet. In order to solve this we need to verify the row variable exists before we try to render it.  
+
+In the parent element before you attempt to render the row variable (in the case of a table, it would be the TR before the TD) add *ngIf="xxx" (https://angular.io/docs/ts/latest/api/common/index/NgIf-directive.html). This will verify that the row variable has value before we try and render it. (For more information and methods see: http://stackoverflow.com/questions/34731869/wait-for-angular-2-to-load-resolve-model-before-rendering-view-template)
+----------------------------------------------------------------------------------------------------------------------
+11. Add "OnInit" to the list of components imported by the @angular/core (Example: import { Component, OnInit } from '@angular/core';)
+12. Implement the OnInit interface on your component. (Example: export class AppComponent implements OnInit {...})
+13. Add the ngOnInit function to your component and move the call to fetch the row data from the constructor to the ngOnInit fucntion.  For more details: http://stackoverflow.com/questions/35763730/difference-between-constructor-and-ngoninit#answer-35763824)
+----------------------------------------------------------------------------------------------------------------------
+14. Potentially more than one component may want to make this call to fetch the row data.  Move the call to fetch the row data to its own service. Don't forget to:
+    a. Import and DI Http into the new service.
+    b. Import the new service into your component and add at as a "provider" in the component decorator (Example: @Component({ providers: [<service] })).
+    c. DI the new service into your component.
+    d. Move the public row variable to the new service.    
+15. In the ngOnInit call change the call to get the row data to point to the new service.
+16. In the components template change the object references to point to the row varaible now located in the service.
