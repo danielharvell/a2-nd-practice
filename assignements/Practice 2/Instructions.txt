@@ -7,7 +7,7 @@
 4. TypeScript allows you to define the shape of object (this make development less bug prone and facilitates the ts compiler). DocumentInformation.ts is an interface that defines the shape of a NetDocuments list view row.  Import DocumentInformation into your main component. (For more details: https://www.typescriptlang.org/docs/handbook/interfaces.html)
 
 Brad pointed out an error I made in step #4 of Practice 2.  The document DocumentInformation.ts should have been included but wasn’t.  I’ve added that to the project on \\corp-nas02.  I apologize for the mistake.
-
+4. TypeScript allows you to define the shape of object (this make development less bug prone and facilitates the ts compiler). DocumentInformation.ts is an interface that defines the shape of a NetDocuments list view row.  Import DocumentInformation into your main component. (For more details: https://www.typescriptlang.org/docs/handbook/interfaces.html)
 
 5. Create a public variable in your component class to represent the single document row.
 6. Create a private function in your component class that will be used to make and http request to fetch a single row from the "server".
