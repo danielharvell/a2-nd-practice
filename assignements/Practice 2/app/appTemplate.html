@@ -8,9 +8,9 @@
         <th>Client</th>
         <th>Matter</th>
     </tr>
-    <tr>
+    <tr *ngIf="lvData.docRow">
         <td><input type="checkbox"/></td>
-        <td><span (click)="docRename(docName)">{{docName}}</span></td>
+        <td><span (click)="docRename(lvData.docRow.standardAttributes.name)">{{lvData.docRow.standardAttributes.name}}</span></td>
         <td>0123-4567-8910</td>
         <td>Tanner Edwards</td>
         <td>Johnson & Smith</td>

@@ -9,21 +9,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var platform_browser_1 = require("@angular/platform-browser");
-var appComponent_1 = require("./appComponent");
 var http_1 = require("@angular/http");
-var AppModule = (function () {
-    function AppModule() {
+require("rxjs/add/operator/toPromise");
+var ListViewDataService = (function () {
+    function ListViewDataService(http) {
+        this.http = http;
     }
-    return AppModule;
+    ListViewDataService.prototype.getRows = function () {
+        var _this = this;
+        this.http.get("../singleRow.json").toPromise().then(function (data) {
+            _this.docRow = data.json();
+            console.log(_this.docRow);
+        });
+    };
+    return ListViewDataService;
 }());
-AppModule = __decorate([
-    core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, http_1.HttpModule],
-        declarations: [appComponent_1.AppComponent],
-        bootstrap: [appComponent_1.AppComponent]
-    }),
-    __metadata("design:paramtypes", [])
-], AppModule);
-exports.AppModule = AppModule;
-//# sourceMappingURL=appModule.js.map
+ListViewDataService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http])
+], ListViewDataService);
+exports.ListViewDataService = ListViewDataService;
+//# sourceMappingURL=listviewData.service.js.map

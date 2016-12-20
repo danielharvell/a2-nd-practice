@@ -10,11 +10,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var validate_service_1 = require("./validate.service");
+var listviewData_service_1 = require("./listviewData.service");
+var DocumentInformation_1 = require("./DocumentInformation");
 var AppComponent = (function () {
-    function AppComponent(valid) {
+    // public docName: string;
+    function AppComponent(valid, lvData) {
         this.valid = valid;
-        this.docName = "Summary of Motion for Judgement";
+        this.lvData = lvData;
+        // this.docName = "Summary of Motion for Judgement";
     }
+    AppComponent.prototype.ngOnInit = function () {
+        this.lvData.getRows();
+    };
     AppComponent.prototype.docRename = function (oldName) {
         var newName = prompt("Rename " + oldName + " to:");
         try {
@@ -33,9 +40,10 @@ AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
         templateUrl: 'app/appTemplate.html',
-        providers: [validate_service_1.Validate]
+        providers: [validate_service_1.Validate, DocumentInformation_1.DocumentInformation, listviewData_service_1.ListViewDataService]
     }),
-    __metadata("design:paramtypes", [validate_service_1.Validate])
+    __metadata("design:paramtypes", [validate_service_1.Validate,
+        listviewData_service_1.ListViewDataService])
 ], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=appComponent.js.map

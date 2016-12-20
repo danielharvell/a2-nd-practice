@@ -5,9 +5,9 @@ module.exports = {
   "server": {
     "baseDir": [
       // "./src",
-      "./Practice 1",
+      "./Practice 2",
       "./"
     ],
-    "index": "./Practice 1/index.html"
+    "index": "./Practice 2/index.html"
   }
 };

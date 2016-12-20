@@ -3,7 +3,7 @@
     Example:
     import {Http} from '@angular/http';
     import 'rxjs/add/operator/toPromise';
-3. Using dependecy injection, add Http to the main components constructor (this can be private). (For more details: https://angular.io/docs/ts/latest/guide/dependency-injection.html)
+3. Using dependency injection, add Http to the main components constructor (this can be private). (For more details: https://angular.io/docs/ts/latest/guide/dependency-injection.html)
 4. TypeScript allows you to define the shape of object (this make development less bug prone and facilitates the ts compiler). DocumentInformation.ts is an interface that defines the shape of a NetDocuments list view row.  Import DocumentInformation into your main component. (For more details: https://www.typescriptlang.org/docs/handbook/interfaces.html)
 
 Brad pointed out an error I made in step #4 of Practice 2.  The document DocumentInformation.ts should have been included but wasn’t.  I’ve added that to the project on \\corp-nas02.  I apologize for the mistake.
@@ -38,7 +38,7 @@ In the parent element before you attempt to render the row variable (in the case
 ----------------------------------------------------------------------------------------------------------------------
 11. Add "OnInit" to the list of components imported by the @angular/core (Example: import { Component, OnInit } from '@angular/core';)
 12. Implement the OnInit interface on your component. (Example: export class AppComponent implements OnInit {...})
-13. Add the ngOnInit function to your component and move the call to fetch the row data from the constructor to the ngOnInit fucntion.  For more details: http://stackoverflow.com/questions/35763730/difference-between-constructor-and-ngoninit#answer-35763824)
+13. Add the ngOnInit function to your component and move the call to fetch the row data from the constructor to the ngOnInit function.  For more details: http://stackoverflow.com/questions/35763730/difference-between-constructor-and-ngoninit#answer-35763824)
 ----------------------------------------------------------------------------------------------------------------------
 14. Potentially more than one component may want to make this call to fetch the row data.  Move the call to fetch the row data to its own service. Don't forget to:
     a. Import and DI Http into the new service.
@@ -46,4 +46,4 @@ In the parent element before you attempt to render the row variable (in the case
     c. DI the new service into your component.
     d. Move the public row variable to the new service.    
 15. In the ngOnInit call change the call to get the row data to point to the new service.
-16. In the components template change the object references to point to the row varaible now located in the service.
+16. In the components template change the object references to point to the row variable now located in the service.

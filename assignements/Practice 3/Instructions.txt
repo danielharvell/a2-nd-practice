@@ -1,0 +1,86 @@
+Our current list view only shows the columns we've specified, we want to be able to see more information for the selected item in a details pane.
+
+1. Create a public member variable of type boolean. This will eventually hold the row data for the selected document in the list, but for now will be a flag that indicates whether a row is selected or not. Since we want this value to be shared with another component, place this public variable in one of the services you've previous created.
+2. We want to bind the input value of our row selection method (should be a checkbox) to the new variable we created.  To do this we must:
+    a. Import the angular forms module into the appModule.ts file:
+        Example: import { FormsModule }   from '@angular/forms';
+    b. Add "FormsModule" to the list of imports in our main ngModule.
+3. Go to your main component's template and add the ngModel attribute to the checkbox with its value pointing to the new variable added to your service in step #1.  
+    NOTE: For now lets assume we want this to use two-way data binding (For more details: https://angular.io/docs/ts/latest/guide/template-syntax.html#!#binding-syntax)
+    (This will set the value of our new variable to be either true or false (off or on), however we do not currently have a good way of testing this.)
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+4. Create a new component that will control the displaying the details of a selected row. Make sure to add your service that contains your new variable as a provider for this component.
+5. Create a template for this new component (this is meant to be similar to the details pane in NetDocuments, but you are free to use your creativity).
+6. Add a section to your new template that will output the value of your services new variable.
+    Example: <td>{{data.selectedRow}}</td>
+6. Add this new component to the definition in appModule.ts
+7. Add this new component to the HTML in index.html.
+8. Run this your application and select the single row.
+    NOTE: You would expect your details section to reflect whether or not you have a document selected, but currently it is not.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+In both components you should have your service listed as a "provider".  That means, when that component is created, it will call that service class and create an instance of that (service's) class. What you end up with are two compnents using two instances of the same service.  So although the code between the two is the same, the values that are set by the callers are not shared.
+
+9. In both your components, remove the service from the "providers" section on the Component decorator. (NOTE: Do not remove the import statement, or the DI in the constructor).
+10. In your appModule.ts file import the service to that page, then add the service as a "provider" for the NgModule.  
+11. Run and test your program.  Clicking the selection checkbox should change the output value in your new details component.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+What we've just done is created a shared service.  Components inherit services and features from their parent component/modules.  By adding the provider declaration to the NgModule, you declared a global service, and created a single instances of the service, that all components in the module could use.  You'll notice we did the same thing last lesson with the @angular/Http service, the difference here is that we created the service.
+Now, instead of sharing the boolean (true or false) we want to actually share the object.  
+
+12. Open DocumentInformation.ts and add a public variable to object.  This variable will be used to identify if an object is selected or not.
+13. In the main component, change the ngModel binding from our shared services variable to the new variable you added to DocumentInformation.
+14. Create a new public function in your main component that will serve as the selected row handler.  It should accept a DocumentInformation object as its parameter.
+15. In your main components template, add a change event handler to the selection method, pass the current row as the parameter.
+    Example: <input type="checkbox" (change)="ChangeHandler(row)"/>
+16. Change the new public variable in the shared service to type DocumentInformation.
+17. Add the logic to the change handler (in the main component), that if the row is selected, set the shared service variable to that row.  If it is not set clear the shared services variables value.
+18. Run and test. The value in your details pane will not be useful, but you should still see the change.
+------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+19. If you haven't already, fill in the rest of your details component so that the data relflects the selected item. Make sure that one of them is a data field (created or modified date)
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+You'll notice that the date field shows up in a strange format (Example: /Date(1459802329632)/). This is not useful to a user, so we want to modify the date to be in the format the user will understand.  We could parse the date for the object in the constructor of our component, but if we are dealing with hundereds of rows that could be teadious. So lets do it an easier way...
+
+20. Create a new file for parsing dates into a readable format.  This will be a "pipe" class and the file should be labeled the same (Example: ndDate.pipe.ts).
+21. Create and export a class that will serve as our pipe.
+22. Import the Pipe and PipeTransform modules from the angular core.
+    Example: import { Pipe, PipeTransform } from '@angular/core';
+23. Add the @Pipe decorator above your new class, specify the "name" property as what we will refer to the pipe in the code.
+    Example: @Pipe({name: "ndDate"})
+23. Implement PipeTransform on your new class and add the "transform" function to the class.
+    Example: export class ndDate implements PipeTransform{...}
+24. Set the return type on the transform function as "string" and return a test string value from the function.
+25. In the appModule.ts, import your new pipe file, and add the pipe to the declarations section of the NgModule.
+26. In the details component, where the dates are shown, add the call to the new pipe.
+    Example: {{data.selectedRow.standardAttributes.modified | <pipe name>}}
+    NOTE: Instead of the date being returned you should see the string you return in the "transform" function.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+The format for a pipe is "<data> | <pipeName> : <pipeParameter>" which cooresponds to the following in the "transform" function:
+    transform(<data>, <pipeParameter>):<return type>{...}
+For more details: https://angular.io/docs/ts/latest/guide/pipes.html
+
+27. In the pipe class, add the API date (string) as the first parameter and change the return type to "Date".
+28. Transform the API returned date (removing /Date(..)/) and return a date object.
+29. Test and Run. You should see the date return is now the long date format.
+    Example: Tue Oct 13 2015 15:16:23 GMT-0600 (Mountain Daylight Time)
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+30. Change the long date format to the more readable one by using the angular built in "date" pipe by chaining it onto the custom pipe we created.
+    Example: {{data.selectedRow.standardAttributes.modified | <pipe name> | date}}
+31. Test and Run. You should see the date in a more readable format now.
+    Example: Oct 13, 2015
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+This only solves half our problem, we need to also specify the format of the date since that will change per users region.
+
+32. Add a public variable to your details component to represent the date format. (You can use this format: "M/d/yyyy").
+33. In the details template, add the new variable as a parameter to the native angular date pipe.
+    Example: {{data.selectedRow.standardAttributes.modified | <pipe name> | date:<format variable>}}
+34. Test and Run. You should now see your date showing in the correct format.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+35. Inside your service that makes the HTTP request, change the call from "singleRow.json" to "recentDocs.json".
+36. Change the return type from "DocumentInformation" to "Array<DocumentInformation>", and the local.
+37. Create a new public variable for the service and give it the type of "Array<DocumentInformation>", assign the results of the http.get to this new variable.
+38. Change the main components template to use *ngFor to loop through the new array variable and create the list view rows. (For more details: https://angular.io/docs/ts/latest/guide/displaying-data.html)
+    a. Make sure to change all variables inside the for loop to point to the new variable define in the for loop.
+    b. NOTE: If you are referencing some custom attributes you may need to add the *ngIf check before displaying those, just in case the document has no custom attirbutes.
+39. Run and Test.  You should now be seeing multiple rows.  Selecting one of the checkboxs should show that items "details" in the details component.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+EXTRA: The above changes will have broken our document rename funciton from lesson 1.  Fix it so that the rename function works.
