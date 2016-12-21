@@ -9,7 +9,7 @@ import { DocumentInformation } from './DocumentInformation';
   providers: [Validate, DocumentInformation, ListViewDataService]
 })
 export class AppComponent {
-  // public docName: string;
+  public docName: string;
 
   constructor(private valid: Validate,
     private lvData: ListViewDataService) {

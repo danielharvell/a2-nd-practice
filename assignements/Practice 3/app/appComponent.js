@@ -9,28 +9,37 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var http_1 = require("@angular/http");
+require("rxjs/add/operator/toPromise");
 var validate_service_1 = require("./validate.service");
-var listviewData_service_1 = require("./listviewData.service");
-var DocumentInformation_1 = require("./DocumentInformation");
+var data_service_1 = require("./data.service");
 var AppComponent = (function () {
-    function AppComponent(valid, lvData) {
+    function AppComponent(valid, http, data) {
         this.valid = valid;
-        this.lvData = lvData;
-        // this.docName = "Summary of Motion for Judgement";
+        this.http = http;
+        this.data = data;
     }
     AppComponent.prototype.ngOnInit = function () {
-        this.lvData.getRows();
+        this.data.getRow();
     };
     AppComponent.prototype.docRename = function (oldName) {
         var newName = prompt("Rename " + oldName + " to:");
         try {
             if (this.valid.documentName(newName)) {
-                this.docName = newName;
+                this.data.row.standardAttributes.name = newName;
             }
         }
         catch (err) {
             alert(err);
             return;
+        }
+    };
+    AppComponent.prototype.rowSelected = function (row) {
+        if (row.selected) {
+            this.data.selectedRow = row;
+        }
+        else {
+            this.data.selectedRow = null;
         }
     };
     return AppComponent;
@@ -39,10 +48,11 @@ AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
         templateUrl: 'app/appTemplate.html',
-        providers: [validate_service_1.Validate, DocumentInformation_1.DocumentInformation, listviewData_service_1.ListViewDataService]
+        providers: [validate_service_1.Validate]
     }),
     __metadata("design:paramtypes", [validate_service_1.Validate,
-        listviewData_service_1.ListViewDataService])
+        http_1.Http,
+        data_service_1.DataService])
 ], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=appComponent.js.map

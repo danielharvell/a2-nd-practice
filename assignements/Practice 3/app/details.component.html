@@ -1,0 +1,14 @@
+<div *ngIf="data.selectedRow">
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>created date</th>
+            <th>modified date</th>
+        </tr>
+        <tr>
+            <td>{{data.selectedRow.standardAttributes.name}}</td>
+            <td>{{data.selectedRow.standardAttributes.created | ndDate | date: ["M/d/yyyy"]}}</td>
+            <td>{{data.selectedRow.standardAttributes.modified | ndDate | date: ["M/d/yyyy"]}}</td>
+        </tr>
+    </table>
+</div>

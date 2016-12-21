@@ -1,19 +1,25 @@
-<h1>Welcome to Angular!</h1>
+<h1>Welcome to Angular! Practice 3</h1>
 <table border="1">
     <tr>
         <th></th>
+        <th>Name</th>
         <th>Name</th>
         <th>Doc ID</th>
         <th>Created by</th>
         <th>Client</th>
         <th>Matter</th>
     </tr>
-    <tr *ngIf="data.row">
-        <td><input type="checkbox"/></td>
-        <td><span (click)="docRename(data.row.standardAttributes.name)">{{data.row.standardAttributes.name}}</span></td>
-        <td>{{data.row.standardAttributes.id}}</td>
-        <td>{{data.row.standardAttributes.createdBy}}</td>
-        <td>{{data.row.customAttributes[0].value}} - {{data.row.customAttributes[0].description}}</td>
-        <td>{{data.row.customAttributes[1].value}} - {{data.row.customAttributes[1].description}}</td>
+    <!--<tr *ngIf="data.row">-->
+    <tr *ngFor="let row of data.rows">
+        <td><input type="checkbox" [(ngModel)]="row.selected" (change)="rowSelected(row)"/></td>
+        <td><span (click)="docRename(row.standardAttributes.name)">{{row.standardAttributes.name}}</span></td>
+        <td>{{row.selected}}</td>
+        <td>{{row.standardAttributes.id}}</td>
+        <td>{{row.standardAttributes.createdBy}}</td>
+        <td>{{row.customAttributes[0]?.value}} - {{row.customAttributes[0]?.description}}</td>
+        <td>{{row.customAttributes[1]?.value}}{{row.customAttributes[1]?.description}}</td>
     </tr>
 </table>
+
+
+    <details-thing></details-thing>

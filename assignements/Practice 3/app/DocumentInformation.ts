@@ -5,6 +5,7 @@ export class DocumentInformation
 	location: Location;
 	permissions: Permission[];
 	standardAttributes: StandardAttributes;
+	selected: Boolean;
 
 	constructor() { }
 }

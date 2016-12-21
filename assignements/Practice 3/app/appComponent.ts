@@ -3,20 +3,20 @@ import {Http} from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 import {Validate} from "./validate.service";
-import {Data} from "./data.service";
+import {DataService} from "./data.service";
 import {DocumentInformation} from "./DocumentInformation";
 
 @Component({
   selector: 'my-app',
   templateUrl: 'app/appTemplate.html',
-  providers: [Validate, Data]
+  providers: [Validate]
 })
 export class AppComponent implements OnInit {
 
   constructor(
     private valid: Validate, 
     private http : Http,
-    public data : Data){}
+    public data : DataService){}
 
   ngOnInit(){
    this.data.getRow();
@@ -34,4 +34,13 @@ export class AppComponent implements OnInit {
       return;
     }
   }
+
+  public rowSelected(row: DocumentInformation){
+      if(row.selected){
+        this.data.selectedRow = row;
+      }else{
+        this.data.selectedRow = null;
+      }
+  }
+
 }
