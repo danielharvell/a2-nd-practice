@@ -1,0 +1,21 @@
+<h1>Welcome to Angular!</h1>
+<div style="display:inline-block; width: 75%;">
+    <table border="1">
+        <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Doc ID</th>
+            <th>Created by</th>
+            <th>Client</th>
+            <th>Matter</th>
+        </tr>
+        <tr *ngFor="let row of data.listRows">
+            <td><input [(ngModel)]="row.selected" (change)="selectRow(row)" type="checkbox"/></td>
+            <td><span (click)="docRename(row)">{{row.standardAttributes.name}}</span></td>
+            <td>{{row.standardAttributes.id}}</td>
+            <td>{{row.standardAttributes.createdBy}}</td>
+            <td>{{row.customAttributes[0]?.value}} - {{row.customAttributes[0]?.description}}</td>
+            <td>{{row.customAttributes[1]?.value}} - {{row.customAttributes[1]?.description}}</td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,27 @@
+<div style="display: inline-block;border:1px solid black;width: 23%;">
+    <table >
+        <tr>       
+            <th colspan="2" style="background-color:gray;">{{data.selectedRow?.standardAttributes.name}}</th>
+        </tr>    
+        <tr>
+            <td>Created by:</td>
+            <td *ngIf="data.selectedRow">{{data.selectedRow.standardAttributes.createdBy}} on {{data.selectedRow.standardAttributes.created | ndDate | date:dateFormat}}</td>
+        </tr>
+        <tr>
+            <td>Last modified by:</td>
+            <td *ngIf="data.selectedRow">{{data.selectedRow.standardAttributes.modifiedBy}} on {{data.selectedRow.standardAttributes.modified | ndDate | date:dateFormat}}</td>
+        </tr>
+        <tr>
+            <td>Extension</td>
+            <td>{{data.selectedRow?.standardAttributes.extension}}</td>
+        </tr>
+        <tr>
+            <td>Checked out</td>
+            <td>{{data.selectedRow?.standardAttributes.checkedOutStatus}}</td>
+        </tr>
+        <tr>
+            <td>ID:</td>
+            <td>{{data.selectedRow?.standardAttributes.id}}</td>
+        </tr>
+    </table>
+</div>

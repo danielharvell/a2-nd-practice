@@ -1,0 +1,87 @@
+One benefit to Angular 2 is the reusable components with less effort than with jQuery.  So far we've made large components, but lets try and make our own small component that will be used everywhere
+
+1. Start your project and look at it in each browser.  Notice there is a difference in the checkbox between the browsers (especially IE/Edge).
+2. Create a new component that we will call checkbox.component (you can name it differently, but in the instructions we'll refer to it as the checkbox component).
+    a. This component should import the "Componets" decorator from the Angular 2 core.
+    b. Give the checkbox component a reasonable tag name.
+    c. Don't forget a constructor for the class.
+3. Add the "template" section to the component decorator and add a checkbox as the template.
+    Example: <input type="checkbox"/>
+    a. Make sure to use the `` markes to enclose your template.  This allows you to put the template on multiple lines in the decorator
+4. In the appModule file import the checkbox component and add it to the list of declarations in NgModule.
+5. In your main application template, comment out the row selection method you had previously entered (most likely a checkbox) and add a reference to your new component.
+6. Run and test your application. You should see visible difference, but row selection will no longer be working.
+----------------------------------------------------------------------------------------------------------------------
+Now that we have our new template working, lets make it look a little better.
+
+7. In the checkboxes component decorator add the following template and styles sections (replacing any existing that you have)
+    template: `
+        <input type="checkbox" [(ngModel)]="itemChecked"/>
+        <label (click)="clickHandler()">
+            <div [class.checked]="itemChecked"></div>
+        </label>`,
+    styles: [
+        "input[type='checkbox']{ width: 0; margin: 0;}",
+        "label{margin: 4px;}",
+        "div{ background-color: #fff;height: 13px; width: 13px; display: inline-block; border: 1px solid black;}",
+        "div.checked{ background: url('../app/images/checkmark.png') no-repeat top left;background-size: 13px}"
+    ]
+8. In the checkbox component add a public member variable called "itemChecked" (you can change this, just remember to change it in the template above also).
+9. In the checkbox component add a public click handler function (called clickHandler in the above example).  This function should toggle the state of the "itemChecked".
+10. Run and test your application.  You should be able to click the div box and see a check mark appear.  Test this out in all browsers.  Notice that your checkbox is now uniform!
+----------------------------------------------------------------------------------------------------------------------
+Great, our checkbox looks good, but we still can't select a row to show in the details! Lets fix that.
+
+11. In the angular core import, add "Output" and "EventEmitter" as libraries imported into the component.
+12. In the checkbox component create a new public variable that will act as the change handler the caller will pass into the component.
+    a. Give this variable the @Output() decorator tag.  This tells the compiler that this variable will push data out of the component.
+13. In the checkbox components constructor set the above variable to a new instance of EventEmitter.
+14. In the clickHandler for the component, after we toggle the itemChecked state, emit the change event (this.change.emit()).
+    NOTE: Currently this has no values it emits.  You pass values to the caller function with the emit() call. (For more details: https://angular.io/docs/ts/latest/api/core/index/EventEmitter-class.html)
+15. Now in the main application's template add the change event to your caller of your checkbox component and pass our previous change handler (from Practice 3) as the value.
+    Example: <checkbox (change)="selectRow(row)"></checkbox>
+    NOTE: If we were emitting any custom data, we would simply add the $event parameter to catch whatever we are emitting.
+16. Run and test your application. Notice that clicking the checkbox is still NOT showing the details!
+----------------------------------------------------------------------------------------------------------------------
+The details still aren't updated because the "itemChecked" variable is not linked to the "selected" flag in the DocumentInformation object. So we want to be able to pass in the "selected" flag, and have the details change depending on the value of that model.
+
+17. In the angular core import add "Input" as one of the imported libraries.
+18. Add the @Input() decorator to the item checked variable.
+19. In the main application template, add itemChecked as an input value on your checkbox component and assign that to be the value of your DocumentInformation objects selection flag:
+    Example: <checkbox [itemChecked]="row.selected" (change)="selectRow(row)"></checkbox>
+    NOTE: If you are setting the default value of itemChecked (in your constructor or in the variable declaration) you may want to remove that since it'll effect the selection flag you pass in.
+20. Run and test your application. When you click the checkbox the deails still aren't being update!  
+----------------------------------------------------------------------------------------------------------------------
+21. Go back and uncomment out your initial row selection method and run the application. You'll notice that if you check the old checkbox the new one is changes and the details update.  However checking the new checkbox has no effect! This is because we are allowing inbound data binding (data from outside the component to change the component) but not outbound data binding (data inside the component to change models outside the component).
+----------------------------------------------------------------------------------------------------------------------
+Lets change the component to allow output values now. This will be done similar to our change event, with some minor differences. I won't go in to the details of why, but for more information see: http://blog.thoughtram.io/angular/2016/10/13/two-way-data-binding-in-angular-2.html
+
+22. Add a new public variable to the checkbox component called "itemCheckedChange" and give it the @Output decorator.
+    Example: @Output() itemCheckedChange:any;
+    NOTE: In this case the variable name does matter.  The variable must match your input variable name with "Change" appended to the name.
+23. Like the change handler before, assign "itemCheckedChange" to be a new instance of EventEmitter.
+24. In your change handler, add the below call BEFORE you emit the change hanlder event:
+    Example: this.itemCheckedChange.emit(this.itemChecked);
+25. Go back to your main application template and label itemChecked as both input and ouput (banana in a box).
+    Example: <checkbox [(itemChecked)]="row.selected" (change)="selectRow(row)"></checkbox>
+26. Run and test your application. Now when you click either the old or new checkbox, both checkboxes should be updated along with the details!
+    a. Go ahead and remove the old checkbox now that our new one is working!
+----------------------------------------------------------------------------------------------------------------------
+Lets look at our end result.  We have a component, contained in one file (the one I wrote is 30 lines of code!), that we can reuse that will give us our own custom checkbox that is standard across all browsers! To do this in other frameowrks would have take a lot more code!
+It's not very practical that we would do this because there are libraries out there that will do the same thing for us, however the point of the lesson is to show that making your own component is very easy and lightweight!
+Also, you'll notice that nothing in our component is specific to the list view application we've written. This checkbox can be used in any location for any purpose!
+
+Now lets go just one step further...We have many components that are ~80% the same, with the remaining 20% very different.  So lets says we want to allow the caller of our new checkbox to add there own HTML before the checkbox (this is very unlikely, but the principle will still be the same).
+
+27. In the checkbox component template, add the ng-content tag before the div that shows the checkbox.
+    Example: <ng-content></ng-content>
+28. In the main application template, between your checkbox components opening and closing tags, add some text.
+    Example: <checkbox [(itemChecked)]="row.selected" (change)="selectRow(row)">Some text!</checkbox>
+29. Run and test your application.  See that your text gets added into the template!
+----------------------------------------------------------------------------------------------------------------------
+Now thats great, but kinda boring. Lets make the text only show when a document is selected.
+30. Wrap your added text in a tag with an ngIf statement.
+31. Run and test your application.  Everytime you check an item, the text appears.
+    NOTE: You can anything to the inside of your component, and you can even do "multi-slot transclusion", meaning you can put your content in varying locations.
+----------------------------------------------------------------------------------------------------------------------
+Again, this isn't very useful for our application, but the priniciple is what is important.
