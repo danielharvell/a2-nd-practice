@@ -10,7 +10,8 @@
             <th>Matter</th>
         </tr>
         <tr *ngFor="let row of data.listRows">
-            <td><input [(ngModel)]="row.selected" (change)="selectRow(row)" type="checkbox"/></td>
+            <!--<td><input [(ngModel)]="row.selected" (change)="selectRow(row)" type="checkbox"/></td>-->
+            <td><my-checkbox (change)="selectRow(row)" [(itemChecked)]="row.selected">Some text!</my-checkbox></td>
             <td><span (click)="docRename(row)">{{row.standardAttributes.name}}</span></td>
             <td>{{row.standardAttributes.id}}</td>
             <td>{{row.standardAttributes.createdBy}}</td>

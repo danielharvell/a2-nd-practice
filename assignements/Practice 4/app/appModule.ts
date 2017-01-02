@@ -4,6 +4,7 @@ import {HttpModule} from '@angular/http';
 import { FormsModule }   from '@angular/forms';
 import {AppComponent} from './app.component';
 import {Details} from "./details.component";
+import {MyCheckboxComponent} from "./mycheckbox.component";
 import {Data} from "./data.service";
 import {ndDate} from "./date.pipe";
 
@@ -13,9 +14,19 @@ import {ndDate} from "./date.pipe";
         FormsModule,
         HttpModule
     ],
-    providers: [Data],
-    declarations: [AppComponent, Details, ndDate],
-    bootstrap: [AppComponent, Details]
+    providers: [
+        Data
+    ],
+    declarations: [
+        AppComponent, 
+        Details, 
+        ndDate, 
+        MyCheckboxComponent
+    ],
+    bootstrap: [
+        AppComponent, 
+        Details
+    ]
 })
 export class AppModule {
     constructor(){}
